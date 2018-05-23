@@ -19,7 +19,7 @@ elifePipeline {
                 try {
                     sh "./setup.sh"
                     sh "IMAGE_TAG=${commit} docker-compose up -d --force-recreate"
-                    sh "docker-wait-healthy sciencebeamtexture_texture_1"
+                    sh "docker-wait-healthy sciencebeam_texture_texture_1"
                     sh "./project_tests.sh"
                 } finally {
                     sh "IMAGE_TAG=${commit} docker-compose down"
