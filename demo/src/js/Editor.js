@@ -1,10 +1,10 @@
 import {
   Component, DefaultDOMElement, parseKeyEvent,
-  InMemoryDarBuffer, substanceGlobals,
+  substanceGlobals,
   platform
 } from 'substance'
 import {
-  Texture, JATSImportDialog, TextureArchive
+  Texture, JATSImportDialog, TextureArchive, InMemoryDarBuffer
 } from 'substance-texture'
 
 /* Sample integration of Texture */
@@ -89,20 +89,17 @@ class ScienceBeamTextureEditor extends Component {
     let buffer = new InMemoryDarBuffer();
     let archive = new TextureArchive(storage, buffer);
 
-    let promise = archive.load('dummy')
-                         .then(() => {
-                           setTimeout(() => {
-                             console.log('archive loaded:', archive);
-                             this.setState({archive})
-                           }, 0)
-                         });
-
-    if (!platform.devtools) {
-      promise.catch(error => {
+    let promise = archive.load('dummy', error => {
+      if (error) {
         console.error(error);
         this.setState({error});
-      })
-    }
+      } else {
+        setTimeout(() => {
+          console.log('archive loaded:', archive);
+          this.setState({archive})
+        }, 0)
+      }
+    });
   }
 
   _init() {
