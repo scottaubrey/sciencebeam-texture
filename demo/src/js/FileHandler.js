@@ -16,7 +16,6 @@ const FileHandler = class FileHandler {
 
   storeTransformedFileData(data) {
     this.window.localStorage.transformedFileData = JSON.stringify(data);
-    this.messageBoard.announceSuccess('File data processed, stored in local storage');
   }
 
   setConvertApiUrl(convertApiUrl) {
@@ -57,7 +56,6 @@ const FileHandler = class FileHandler {
     this.messageBoard.showBusy();
     const reader = new FileReader();
     reader.onload = (e) => {
-      this.messageBoard.announceSuccess(`Successfully read file "${file.name}"`);
       this.handleFileData(e.currentTarget.result, file.name);
     };
 
