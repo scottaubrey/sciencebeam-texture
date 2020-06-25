@@ -8,7 +8,6 @@ input {
 
 .busy:before {
   content: "";
-  float: right;
   @include loading-spinner($highlight-color: $color-text--reverse, $base-color: #81c4e8);
 }
 
@@ -27,7 +26,7 @@ input {
 .section--uploader {
   border-top: 1px solid $color-text-dividers;
   margin-top: 3rem;
-  padding: 1rem;
+  padding: 3rem;
   padding-left: 0;
 }
 

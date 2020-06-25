@@ -117,7 +117,7 @@
 
 /* Toggle Checkbox Slider */
 .toggle-checkbox__slider {
-  background-color: #2196F3;
+  background-color: $color-primary;
   cursor: pointer;
   position: absolute;
   top: 0;
@@ -141,11 +141,11 @@
 }
 
 input:checked + .toggle-checkbox__slider {
-  background-color: #2196F3;
+  background-color: $color-primary;
 }
 
 input:focus + .toggle-checkbox__slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px $color-primary;
 }
 
 input:checked + .toggle-checkbox__slider:before {
@@ -170,9 +170,12 @@ label.custom-file-upload input[type="file"] {
 }
 
 .custom-file-upload {
-  @include margin(2);
-  @include padding(15 18);
-  background: #2196F3;
+  @include padding(14 18 10);
+  background:$color-primary;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: $font-secondary;
+  font-weight: bold;
   display: inline-block;
   text-transform: uppercase;
 }
