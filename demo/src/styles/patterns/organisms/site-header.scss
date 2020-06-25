@@ -73,7 +73,6 @@
 @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
 
   .site-header__title {
-    border-right: 1px solid $color-text-dividers;
     float: left;
     @include height(95);
     margin-right: 10px;
@@ -99,7 +98,6 @@
   .site-header__logo_link {
     background: none;
     display: block;
-    float: right;
     height: 51px;
     margin: 4px 0 0 0;
     position: relative;

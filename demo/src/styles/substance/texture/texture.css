@@ -31,6 +31,7 @@
 .sc-modal-dialog.sm-width-large .se-body { max-width: var(--large-layout-width); }
 
 .sc-texture {
+  border-top: 1px solid #bdbdbd;
   height: 100%;
 }
 
